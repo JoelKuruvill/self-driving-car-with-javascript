@@ -6,6 +6,6 @@ A project I created following a (freeCodeCamp course)[https://www.freecodecamp.o
 
 The project can be acessed here: https://self-driving-car-with-javascript.onrender.com.
 
-Stopped at 1hr10mins33sec
+Stopped at 1hr24mins08sec
 
 https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode

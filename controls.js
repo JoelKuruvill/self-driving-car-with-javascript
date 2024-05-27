@@ -11,15 +11,19 @@ class Controls{
     #addKeyboardListeners() { //# for private method..
         document.onkeydown=(event)=>{
             switch(event.key){
+                case "a":
                 case "ArrowLeft":
                     this.left=true;
                     break;
+                case "d":
                 case "ArrowRight":
                     this.right=true;
                     break;
+                case "w":
                 case "ArrowUp":
                     this.forward=true;
                     break;
+                case "s":
                 case "ArrowDown":
                     this.reverse=true;
                     break;
@@ -31,15 +35,19 @@ class Controls{
 
         document.onkeyup=(event)=>{
             switch(event.key){
+                case "a":
                 case "ArrowLeft":
                     this.left=false;
                     break;
+                case "d":
                 case "ArrowRight":
                     this.right=false;
                     break;
+                case "w":
                 case "ArrowUp":
                     this.forward=false;
                     break;
+                case "s":
                 case "ArrowDown":
                     this.reverse=false;
                     break;

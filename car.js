@@ -38,7 +38,7 @@ class Car {
             // console.log(outputs);
 
             if(this.useBrain){
-                this.controls.foward=outputs[0];
+                this.controls.forward=outputs[0];
                 this.controls.left=outputs[1];
                 this.controls.right=outputs[2];
                 this.controls.reverse=outputs[3];
@@ -122,7 +122,7 @@ class Car {
         this.y-=Math.cos(this.angle)*this.speed;
     }
 
-    draw(ctx, color) {
+    draw(ctx, color,drawSensor=false) {
         if(this.damaged){
             ctx.fillStyle="gray";
         }else{
@@ -135,7 +135,7 @@ class Car {
         }
         ctx.fill();
 
-        if(this.sensor){
+        if(this.sensor && drawSensor){
             this.sensor.draw(ctx);
         }
     }

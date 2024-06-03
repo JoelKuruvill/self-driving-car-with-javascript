@@ -6,7 +6,7 @@ A project I created following a (freeCodeCamp course)[https://www.freecodecamp.o
 
 The project can be acessed here: https://self-driving-car-with-javascript.onrender.com.
 
-Stopped at 2hr03mins49sec
+Stopped at 2hr19mins08sec
 
 Useful Course Resources:
 - https://www.youtube.com/watch?v=fHOLQJo0FjQ
@@ -14,3 +14,5 @@ Useful Course Resources:
 
 References:
 - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+- https://www.compart.com/en/unicode/U+1F4BE
+- https://graphemica.com/%F0%9F%97%91#code

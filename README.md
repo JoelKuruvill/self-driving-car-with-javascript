@@ -2,11 +2,11 @@
 Created: 2024-MAY-15 | Updated: 2024-JUNE-3
 
 A project I created following a (freeCodeCamp course)[https://www.freecodecamp.org/news/create-a-virtual-world-with-javascript/]. This is Part 1, and has helped me to not only work out a complex
- JS program, but to work out specific solutions.
+ JS program, but to work out specific solutions too.
 
 The project can be acessed here: https://self-driving-car-with-javascript.onrender.com.
 
-Stopped at 2hr19mins08sec
+Stopped at 2hr29mins37sec
 
 Useful Course Resources:
 - https://www.youtube.com/watch?v=fHOLQJo0FjQ

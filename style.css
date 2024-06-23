@@ -15,10 +15,11 @@ body {
 
 #pageInfo {
     position: absolute;
-    top: 5%;
+    top: 10vh;
     left: 0;
-    width: 10%;
-    padding: 2% 1%;
+    width: fit-content;
+    max-width: 15%;
+    padding: 2vh 3%;
     background-color: antiquewhite;
 }
 

@@ -35,7 +35,7 @@ class Controls{
                     this.reverse=true;
                     break;
                 default:                 
-                    console.log(event.key)
+                    // console.log(event.key)
             }
             // console.table(this); //prints to console as a table.
         }
@@ -59,7 +59,7 @@ class Controls{
                     this.reverse=false;
                     break;
                 default:                 
-                    console.log(event.key)             
+                    // console.log(event.key)             
             }
             // console.table(this); //prints to console as a table.
         }

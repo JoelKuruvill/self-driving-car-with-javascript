@@ -5,8 +5,10 @@ networkCanvas.width = 300;
 
 const carCtx = carCanvas.getContext("2d"); //drawing context?
 const networkCtx = networkCanvas.getContext("2d");
+
 const road = new Road(carCanvas.width/2, carCanvas.width*0.9);
-//const car = new Car(road.getLaneCenter(1), 100, 30, 50,"AI"); //X, Y, width and height.. all in pixels
+
+const car = new Car(road.getLaneCenter(1), 100, 30, 50,"KEYS");
 
 const N = 100;
 const cars = generateCars(N);
@@ -33,6 +35,10 @@ const traffic=[
 
 animate();
 
+function reload() {
+    window.location.reload();
+}
+
 function save(){
     localStorage.setItem("bestBrain", JSON.stringify(bestCar.brain));
 }
@@ -51,17 +57,23 @@ function generateCars(N){
 
 function animate(time){
     for (let i=0;i<traffic.length;i++){
-        traffic[i].update(road.borders,[]);
+        let trafficSim = traffic[i];
+        trafficSim.update(road.borders,[]);
     }
 
-    for(let i=0;i<cars.length;i++){
-        cars[i].update(road.borders,traffic);
+    if (document.getElementById("User").checked){
+        car.y = bestCar.y;
+        car.update(road.borders,traffic);
+        bestCar = car;
+    } else {
+        for(let i=0;i<cars.length;i++){
+            cars[i].update(road.borders,traffic);
+        }
+        bestCar=cars.find(
+            c=>c.y==Math.min(
+                ...cars.map(c=>c.y)
+            )); //fitness functions when expanding.. homework!
     }
-    bestCar=cars.find(
-        c=>c.y==Math.min(
-            ...cars.map(c=>c.y)
-        )); //fitness functions when expanding.. homework!
-    
     carCanvas.height = window.innerHeight;
     networkCanvas.height = window.innerHeight;
 
@@ -76,10 +88,18 @@ function animate(time){
         cars[i].draw(carCtx,"blue");
     }
     carCtx.globalAlpha=1;
+    
+    if(document.getElementById("User").checked){
+        bestCar.draw(carCtx,"green",true);
+    } 
+    else {
     bestCar.draw(carCtx,"blue",true);
+    }
 
     carCtx.restore();
-    networkCtx.lineDashOffset=-time/50;
-    Visualizer.drawNetwork(networkCtx,bestCar.brain);
+    if(!document.getElementById("User").checked){
+        networkCtx.lineDashOffset=-time/50;
+        Visualizer.drawNetwork(networkCtx,bestCar.brain);
+    }
     requestAnimationFrame(animate); //time comes from here..
 }

@@ -10,6 +10,16 @@ body {
 #verticalButtons{
     display: flex;
     flex-direction: column;
+    margin: 2px;
+}
+
+#pageInfo {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 10%;
+    padding: 2% 1%;
+    background-color: antiquewhite;
 }
 
 button {
